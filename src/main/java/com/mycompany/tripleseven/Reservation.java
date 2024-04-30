@@ -5,7 +5,7 @@
 package com.mycompany.tripleseven;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -17,7 +17,7 @@ public class Reservation {
     private LocalDateTime dateTime;
     private Table table;
     
-    
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm a");
     private Customer customer;
 
     public Reservation(int resID, int tableID, int customerID, String resCustomerName, String resCustomerPhoneNumber, LocalDateTime dateTime) {
@@ -90,7 +90,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation: " + resID + "\nCustomer Name: " + resCustomerName + "\nCustomer PhoneNumber: " + resCustomerPhoneNumber + "\nDate:" + dateTime + "\nTable:" + table + "\n---------";
+        return "Reservation: " + resID + "\nCustomer Name: " + resCustomerName + "\nCustomer PhoneNumber: " + resCustomerPhoneNumber + "\nDate:" + dateTime.format(formatter) + "\nTable:" + table + "\n---------";
     }
     
     
