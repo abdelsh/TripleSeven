@@ -10,6 +10,7 @@ package com.mycompany.tripleseven;
  * @author hp
  */
 public abstract class Human {
+    
     private int id;
     private String name;
 

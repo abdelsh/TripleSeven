@@ -12,6 +12,4 @@ public interface OrderObservable {
     public void addObserver(OrderObserver orderObserver);
     public void removeObserver(OrderObserver orderObserver);
     public void notifyObservers(Order order);
-    
-    
 }

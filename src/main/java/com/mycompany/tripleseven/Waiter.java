@@ -8,25 +8,43 @@ package com.mycompany.tripleseven;
  *
  * @author hp
  */
-public class Waiter extends Human implements OrderObserver{
+public class Waiter extends Human implements OrderObserver, Payment{
 
     public Waiter(int id, String name) {
         super(id, name);
     }
     
-    
-    
-
     @Override
     public void update(Order order) {
         // Notify waiter about the new order
         System.out.println("Waiter Name: " + order.getWaiter().getName() + " received a new order: " + order.getOrderID());
     }
+    
+    @Override
+    public float getAmount() {
+        int workingHours = 40;
+        float salaryPerHour = 10;
+        return workingHours*salaryPerHour;
+    }
+
+    @Override
+    public String getPaymentMethod() {
+        return "Waiter prefers to get the payment in cash";
+    }
+
+    @Override
+    public void printVoucher() {
+        System.out.println("The waiter " + getName() + " got paid " + getAmount());
+    }
+    
+    
 
     @Override
     public String toString() {
-        return "Waiter: Name: " + super.getName() + " ID: " + super.getId();
+        return "Waiter: Name: " + getName() + " ID: " + getId();
     }
+
+    
     
     
 }

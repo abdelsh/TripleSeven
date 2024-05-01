@@ -5,30 +5,30 @@
 package com.mycompany.tripleseven;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author hp
  */
 public class Restaurant {
-    private Menu menu;
     private ReservationSystem reservationSystem = new ReservationSystem(); 
     
-    private ArrayList<Table> tables = new ArrayList<>();
-    private ArrayList<Order> orders = new ArrayList<>();
+    private List<Table> tables = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
     
     //add humans
-    private ArrayList<Waiter> waiters = new ArrayList<>();
-    private ArrayList<Customer> customers = new ArrayList<>();
-    private ArrayList<Chef> chefs = new ArrayList<>();
+    private List<Waiter> waiters = new ArrayList<>();
+    private List<Customer> customers = new ArrayList<>();
+    private List<Chef> chefs = new ArrayList<>();
     
     
     //getters
-    public ArrayList<Table> getTables() {return tables;}
-    public ArrayList<Order> getOrders() {return orders;}
-    public ArrayList<Waiter> getWaiters() {return waiters;}
-    public ArrayList<Chef> getChefs() {return chefs;}
-    public ArrayList<Customer> getCustomers() {return customers;}
+    public List<Table> getTables() {return tables;}
+    public List<Order> getOrders() {return orders;}
+    public List<Waiter> getWaiters() {return waiters;}
+    public List<Chef> getChefs() {return chefs;}
+    public List<Customer> getCustomers() {return customers;}
     
 
     //add
@@ -60,8 +60,8 @@ public class Restaurant {
         return table;
     }
     
-    public ArrayList<Table> getAvailableTables () {
-        ArrayList<Table> availableTables = new ArrayList<>();
+    public List<Table> getAvailableTables () {
+        List<Table> availableTables = new ArrayList<>();
         
         for (int i = 0 ; i < tables.size() ; i++) {
             if (tables.get(i).isStatus()){

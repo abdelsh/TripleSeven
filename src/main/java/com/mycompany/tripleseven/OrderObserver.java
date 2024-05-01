@@ -10,5 +10,4 @@ package com.mycompany.tripleseven;
  */
 public interface OrderObserver {
     public void update(Order order);
-
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author hp
  */
-public class Chef extends Human implements OrderObservable{
+public class Chef extends Human implements OrderObservable, Payment{
     private ArrayList<OrderObserver> observers = new ArrayList<>();
 
     public Chef(int id, String name) {
@@ -19,9 +19,6 @@ public class Chef extends Human implements OrderObservable{
 
     public Chef() {
     }
-
-    
-    
     
     public void prepareOrder(Order order) {
         for (int i = 0 ; i < order.getItems().size() ; i++){
@@ -50,5 +47,27 @@ public class Chef extends Human implements OrderObservable{
             observer.update(order);
         }
     }
+
+    
+    @Override
+    public float getAmount() {
+        int workingHours = 40;
+        float salaryPerHour = 15;
+        return workingHours*salaryPerHour;
+    }
+
+    @Override
+    public String getPaymentMethod() {
+        return "Waiter prefers to get the payment though bank transfer";
+    }
+
+    @Override
+    public void printVoucher() {
+        System.out.println("The chef " + getName() + " got paid " + getAmount());
+    }
+    
+    
+    
+    
 
 }

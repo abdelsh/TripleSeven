@@ -16,6 +16,7 @@ public class TripleSeven {
 
     public static void main(String[] args) {
         
+        
         Restaurant restaurant = new Restaurant();
         Menu menu = new Menu();
         
@@ -63,6 +64,7 @@ public class TripleSeven {
             System.out.println(restaurant.getOrders().get(i));
         }
         
+        //add Tables
         restaurant.addTable(new Table(1, "Big", "outdoor", true));
         restaurant.addTable(new Table(2, "Medium", "indoor", true));
         restaurant.addTable(new Table(2, "Small", "indoor", true));

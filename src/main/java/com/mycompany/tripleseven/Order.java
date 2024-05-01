@@ -5,6 +5,7 @@
 package com.mycompany.tripleseven;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -12,11 +13,15 @@ import java.util.ArrayList;
  */
 public class Order {
     private int orderID;
+    
+    //bad
+    private Waiter x;
+    
+    //good
     private Waiter waiter;
     
-    private ArrayList<MenuItem> items = new ArrayList<>();
-    private ArrayList<String> specialRequest = new ArrayList<>();
-    private float totalPrice;
+    private List<MenuItem> items = new ArrayList<>();
+    private List<String> specialRequest = new ArrayList<>();
 
     public int getOrderID() {
         return orderID;
@@ -36,7 +41,7 @@ public class Order {
     
     
 
-    public ArrayList<MenuItem> getItems() {
+    public List<MenuItem> getItems() {
         return items;
     }
     
@@ -63,23 +68,24 @@ public class Order {
         specialRequest.remove(request);
     }
     
-    public String printItems (ArrayList<MenuItem> items) {
+    public String printItems (List<MenuItem> items) {
         String str_items = "";
         
         
-        for (int i = 0 ; i < this.items.size() ; i++) {
-            str_items = str_items + items.get(i).getItemName();
-            if (i!=this.items.size()-1){
-                str_items = str_items + ", ";
-            } else {
-                str_items = str_items + ".";
-            }
-        }
+/******/for (int i = 0 ; i < this.items.size() ; i++) {
+/**********/str_items = str_items + items.get(i).getItemName();
+/**********/if (i!=this.items.size()-1){
+/**************/str_items = str_items + ", ";
+/**********/} else {
+/**************/str_items = str_items + ".";
+/**********/}
+/******/}
         
         return str_items;
     }
     
-    public float calculateTotalAmount(ArrayList<MenuItem> items) {
+    //camelback
+    public float calculateTotalAmount(List<MenuItem> items) {
         float x = 0;
         
         for (int i = 0 ; i < this.items.size() ; i++) {

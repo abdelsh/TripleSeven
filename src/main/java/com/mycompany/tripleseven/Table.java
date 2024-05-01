@@ -10,7 +10,7 @@ package com.mycompany.tripleseven;
  */
 public class Table {
     private int tableID;
-    private String type; //big or small or bigger
+    private String type; //big or small or medium
     private String location; //Outdoor or indoor
     private boolean status; // Available or not
 

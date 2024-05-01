@@ -6,13 +6,14 @@ package com.mycompany.tripleseven;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author hp
  */
 public class ReservationSystem {
-    private ArrayList<Reservation> reservations = new ArrayList<>();
+    private List<Reservation> reservations = new ArrayList<>();
     
     
 
@@ -29,7 +30,7 @@ public class ReservationSystem {
         reservations.remove(reservation);
     }
     
-    public ArrayList<Reservation> getReservations() {
+    public List<Reservation> getReservations() {
         return reservations;
     }
     
